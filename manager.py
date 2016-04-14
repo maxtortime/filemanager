@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-import os
-from flask import Flask, render_template, redirect, request
-from filesystem import Folder, File
-from action import *
-from flask import request
 from os import error
+
+from flask import redirect
+from flask import request
+
+from action import *
+from filesystem import Folder, File
 
 app = Flask(__name__)
 app.config.update(
@@ -48,4 +49,4 @@ def create_directory(path = "/"):
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0")
+    app.run(host="127.0.0.1", port=8080) # for local testing
